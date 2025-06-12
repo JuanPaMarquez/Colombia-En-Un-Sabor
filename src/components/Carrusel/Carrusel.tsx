@@ -14,7 +14,7 @@ function CarruselContent() {
     count, 
     carruselImg, 
     nextImage, 
-    prevImage, 
+    prevImage,
     moveImage 
   } = useInterval();
 
