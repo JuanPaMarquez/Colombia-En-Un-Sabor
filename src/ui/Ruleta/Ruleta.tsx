@@ -8,14 +8,11 @@ const CustomWheel = () => {
 
   // Configuración fija de elementos con diferentes pesos
   const wheelItems = [
-    { text: 'Premio Mayor', weight: 1, color: '#FF6B6B' },
-    { text: 'Descuento 50%', weight: 2, color: '#4ECDC4' },
-    { text: 'Descuento 20%', weight: 4, color: '#45B7D1' },
-    { text: 'Descuento 10%', weight: 6, color: '#96CEB4' },
-    { text: 'Intenta de nuevo', weight: 8, color: '#FFEAA7' },
-    { text: 'Regalo gratis', weight: 2, color: '#DDA0DD' },
-    { text: 'Cupón 2x1', weight: 3, color: '#98D8C8' },
-    { text: 'Sin premio', weight: 4, color: '#F7DC6F' }
+    { text: 'Mala suerte', weight: 39, color: '#FF6B6B' },
+    { text: 'Descuento 20%', weight: 4, color: '#4ECDC4' },
+    { text: 'Descuento 30%', weight: 3, color: '#45B7D1' },
+    { text: 'Descuento 40%', weight: 2, color: '#96CEB4' },
+    { text: 'Descuento 50%', weight: 2, color: '#963EB4' },
   ];
 
   // Calcular el total de peso y crear segmentos
