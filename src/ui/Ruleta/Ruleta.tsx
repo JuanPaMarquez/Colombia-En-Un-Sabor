@@ -1,18 +1,85 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+const codigo = ["col-1434", "col-3211", "col-1221", "col-5678", "col-9876"];
 
 const CustomWheel = () => {
+  const navigate = useNavigate();
+  const params = useParams();
+  const { id } = params;
+  
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState('');
   const [rotation, setRotation] = useState(0);
   const wheelRef = useRef(null);
 
+  useEffect(() => {
+    if (!id || !codigo.includes(id)) navigate('/');
+
+  }, []);
+
   // Configuración fija de elementos con diferentes pesos
   const wheelItems = [
-    { text: 'Mala suerte', weight: 39, color: '#FF6B6B' },
-    { text: 'Descuento 20%', weight: 4, color: '#4ECDC4' },
-    { text: 'Descuento 30%', weight: 3, color: '#45B7D1' },
-    { text: 'Descuento 40%', weight: 2, color: '#96CEB4' },
-    { text: 'Descuento 50%', weight: 2, color: '#963EB4' },
+    { text: 'Descuento 30%', weight: 1, color: '#ebdc0b' },
+    { text: 'Mala suerte', weight: 5, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 20%', weight: 1, color: '#4ECDC4' },
+    { text: 'Mala suerte', weight: 3, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 40%', weight: 1, color: '#0df01a' },
+    { text: 'Mala suerte', weight: 3, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 30%', weight: 1, color: '#ebdc0b' },
+    { text: 'Mala suerte', weight: 6, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 20%', weight: 1, color: '#4ECDC4' },
+    { text: 'Mala suerte', weight: 4, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 50%', weight: 1, color: '#963EB4' },
+    { text: 'Mala suerte', weight: 4, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 30%', weight: 1, color: '#ebdc0b' },
+    { text: 'Mala suerte', weight: 2, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 20%', weight: 1, color: '#4ECDC4' },
+    { text: 'Mala suerte', weight: 5, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 40%', weight: 1, color: '#0df01a' },
+    { text: 'Mala suerte', weight: 4, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 20%', weight: 1, color: '#4ECDC4' },
+    { text: 'Mala suerte', weight: 3, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    // { text: 'Mala suerte', weight: 1, color: '#FF6B6B' },
+    { text: 'Descuento 50%', weight: 1, color: '#963EB4' },
   ];
 
   // Calcular el total de peso y crear segmentos

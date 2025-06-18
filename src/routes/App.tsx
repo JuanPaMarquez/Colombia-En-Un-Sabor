@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Inicio />} />
-      <Route path="/ruleta" element={<RuletaView />} />
+      <Route path="/ruleta/:id" element={<RuletaView />} />
       
       { /* not found */}
       <Route path="*" element={<NotFound />} />
