@@ -246,6 +246,14 @@ const CustomWheel = () => {
           )}
         </button>
 
+        {/* Código de canje */}
+        <div className="bg-purple-200 backdrop-blur-sm rounded-2xl p-6 mb-8 mt-4 border-2 border-dashed border-yellow-400">
+          <p className="text-yellow-700 font-semibold mb-2">📋 CÓDIGO DE CANJE</p>
+          <p className="text-3xl font-mono font-bold text-black tracking-wider text-center">
+            {id}
+          </p>
+        </div>
+
         {/* Resultado */}
         {result && (
           <div className='backdrop-blur-md fixed inset-0 h-full flex flex-col gap-5 items-center justify-center z-50'>
